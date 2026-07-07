@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>AI Construction Summit 2026 · Enlaces</title>
+<meta name="description" content="Todos los enlaces del AI Construction Summit 2026: grupo de WhatsApp, redes, inscripción y agenda."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+
+<!-- Configuración del evento — editar solo config.js, nunca este archivo -->
+<script src="config.js"></script>
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Manrope',sans-serif;font-weight:300;
+  background:#191C32;color:#fff;
+  min-height:100vh;line-height:1.6;
+  overflow-x:hidden;
+}
+
+:root{
+  --blue:   #236BF9;
+  --purple: #7C28F8;
+  --cyan:   #6DEFFD;
+  --dark:   #191C32;
+  --dark2:  #222644;
+  --gray:   #9193BB;
+  --border: rgba(145,147,187,.15);
+  --grad:   linear-gradient(135deg,#236BF9,#7C28F8);
+  --wa:     #25D366;
+}
+
+.bg-decor{
+  position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;
+}
+.blob{
+  position:absolute;border-radius:50%;filter:blur(90px);opacity:.35;
+}
+.blob-1{width:340px;height:340px;top:-120px;left:-100px;background:var(--purple);}
+.blob-2{width:300px;height:300px;bottom:-100px;right:-90px;background:var(--blue);}
+.blob-3{width:220px;height:220px;top:40%;left:60%;background:var(--cyan);opacity:.15;}
+
+.page{
+  position:relative;z-index:1;
+  display:flex;justify-content:center;
+  padding:3rem 1.1rem 2.5rem;
+}
+
+.card{
+  width:100%;max-width:480px;
+  display:flex;flex-direction:column;align-items:center;
+}
+
+.avatar-wrap{
+  width:84px;height:84px;border-radius:22px;
+  background:var(--dark2);border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  padding:14px;margin-bottom:1.2rem;
+  box-shadow:0 8px 30px rgba(35,107,249,.18);
+}
+.avatar-wrap img{width:100%;height:100%;object-fit:contain}
+
+.title{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-weight:800;font-size:1.5rem;text-align:center;
+  letter-spacing:-.02em;
+}
+.subtitle{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:.85rem;font-weight:500;color:var(--gray);
+  text-align:center;margin-top:.4rem;
+}
+
+.badge{
+  display:inline-flex;align-items:center;gap:.4rem;
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:.7rem;font-weight:600;color:var(--cyan);
+  background:rgba(109,239,253,.08);
+  border:1px solid rgba(109,239,253,.25);
+  padding:.32rem .85rem;border-radius:2rem;
+  margin-top:.9rem;
+}
+.badge-dot{width:6px;height:6px;border-radius:50%;background:var(--cyan);animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+
+.link-list{
+  width:100%;display:flex;flex-direction:column;gap:.75rem;
+  margin-top:1.8rem;
+}
+
+.link-btn{
+  display:flex;align-items:center;gap:.8rem;
+  width:100%;text-decoration:none;color:#fff;
+  background:var(--dark2);border:1px solid var(--border);
+  border-radius:1rem;padding:.95rem 1.1rem;
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:.92rem;font-weight:600;
+  transition:transform .15s ease,border-color .15s ease,background .15s ease;
+}
+.link-btn:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.25)}
+.link-btn:active{transform:translateY(0)}
+
+.link-icon{
+  flex-shrink:0;width:38px;height:38px;border-radius:.7rem;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(255,255,255,.06);
+}
+.link-icon svg{width:19px;height:19px}
+
+.link-text{flex:1;min-width:0}
+.link-text small{
+  display:block;font-size:.7rem;font-weight:400;color:var(--gray);
+  margin-top:.1rem;
+}
+
+.link-arrow{flex-shrink:0;opacity:.5}
+.link-arrow svg{width:16px;height:16px}
+
+.link-btn--primary{
+  background:var(--grad);border:none;
+  box-shadow:0 6px 24px rgba(35,107,249,.35);
+}
+.link-btn--primary .link-icon{background:rgba(255,255,255,.16)}
+.link-btn--primary .link-text small{color:rgba(255,255,255,.75)}
+
+.link-btn--wa{
+  background:var(--wa);border:none;
+  box-shadow:0 6px 20px rgba(37,211,102,.3);
+}
+.link-btn--wa .link-icon{background:rgba(255,255,255,.16)}
+.link-btn--wa .link-text small{color:rgba(255,255,255,.8)}
+
+.social-section{width:100%;margin-top:2.1rem;text-align:center}
+.social-label{
+  display:block;font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:.72rem;font-weight:700;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--gray);margin-bottom:.8rem;
+}
+.social-row{display:flex;justify-content:center;gap:.7rem;margin-bottom:1.6rem}
+.social-icon{
+  width:46px;height:46px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--dark2);border:1px solid var(--border);
+  color:#fff;transition:transform .15s ease,border-color .15s ease;
+}
+.social-icon:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.3)}
+.social-icon svg{width:19px;height:19px}
+
+footer{
+  margin-top:1.2rem;display:flex;flex-direction:column;align-items:center;gap:.7rem;
+}
+.footer-logo{height:20px;opacity:.8}
+footer p{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:.68rem;color:var(--gray);text-align:center;
+}
+
+@media (min-width:520px){
+  .title{font-size:1.7rem}
+  .link-btn{padding:1.05rem 1.3rem}
+}
+</style>
+</head>
+<body>
+
+<div class="bg-decor">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<div class="page">
+  <div class="card">
+
+    <div class="avatar-wrap">
+      <img src="assets/images/logo_summit.svg" alt="AI Construction Summit 2026"/>
+    </div>
+
+    <h1 class="title">AI Construction Summit 2026</h1>
+    <p class="subtitle">IA aplicada al sector AEC · Organiza AECODE</p>
+    <span class="badge"><span class="badge-dot"></span>+1,300 inscritos y sumando</span>
+
+    <div class="link-list">
+
+      <a class="link-btn link-btn--wa" href="#" data-cfg="WA_GROUP" target="_blank" rel="noopener">
+        <span class="link-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.2-.4.1-.2 0-.3 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.1.2 2.1 3.2 5.1 4.4.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.4c1.4.8 3.1 1.2 4.8 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3.1.8.8-3-.2-.3C4 14.9 3.6 13.5 3.6 12c0-4.6 3.8-8.4 8.4-8.4s8.4 3.8 8.4 8.4-3.8 8.2-8.4 8.2z"/></svg>
+        </span>
+        <span class="link-text">
+          Únete al grupo de WhatsApp
+          <small>Novedades y avisos del Summit</small>
+        </span>
+        <span class="link-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></span>
+      </a>
+
+      <a class="link-btn link-btn--primary" href="#" data-cfg="SUMMIT_URL" target="_blank" rel="noopener">
+        <span class="link-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg>
+        </span>
+        <span class="link-text">
+          Inscríbete ahora
+          <small>Ya somos +1,300 · aecode.ai/summit</small>
+        </span>
+        <span class="link-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></span>
+      </a>
+
+      <a class="link-btn" id="btnConsulta" href="#" target="_blank" rel="noopener">
+        <span class="link-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H8l-4 4V5a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2z"/></svg>
+        </span>
+        <span class="link-text">
+          Consulta por tu inscripción
+          <small>Escríbenos al WhatsApp</small>
+        </span>
+        <span class="link-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></span>
+      </a>
+
+      <a class="link-btn" href="#" data-cfg="LINKS_AGENDA_URL" target="_blank" rel="noopener">
+        <span class="link-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        </span>
+        <span class="link-text">
+          Conoce la agenda
+          <small>Días, horarios y speakers</small>
+        </span>
+        <span class="link-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></span>
+      </a>
+
+      <a class="link-btn" href="#" data-cfg="LINKS_PRECONGRESO_URL" target="_blank" rel="noopener">
+        <span class="link-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2c3 3 4 6 4 9 0 2-1 4-4 9-3-5-4-7-4-9 0-3 1-6 4-9z"/><circle cx="12" cy="11" r="1.6"/></svg>
+        </span>
+        <span class="link-text">
+          Únete al Pre-Congreso
+          <small>precongreso.vercel.app</small>
+        </span>
+        <span class="link-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></span>
+      </a>
+
+    </div>
+
+    <div class="social-section">
+      <span class="social-label">Redes del Summit</span>
+      <div class="social-row">
+        <a class="social-icon" href="#" data-cfg="SUMMIT_SOCIAL_IG" target="_blank" rel="noopener" aria-label="Instagram del Summit">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+        </a>
+        <a class="social-icon" href="#" data-cfg="SUMMIT_SOCIAL_FB" target="_blank" rel="noopener" aria-label="Facebook del Summit">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.6h2.6l.4-3h-3v-1.9c0-.9.2-1.5 1.5-1.5h1.6V4.3C15.9 4.2 15 4.1 13.9 4.1c-2.3 0-3.9 1.4-3.9 4v2.3H7.4v3H10V21z"/></svg>
+        </a>
+        <a class="social-icon" href="#" data-cfg="SUMMIT_SOCIAL_TT" target="_blank" rel="noopener" aria-label="TikTok del Summit">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.8a4.3 4.3 0 0 1-3-2.6h-2.7v12.5a2.6 2.6 0 1 1-1.9-2.5v-2.8a5.4 5.4 0 1 0 4.6 5.3V9.8a6.9 6.9 0 0 0 4 1.3V8.4a4.3 4.3 0 0 1-1-2.6z"/></svg>
+        </a>
+      </div>
+
+      <span class="social-label">Redes de AECODE</span>
+      <div class="social-row">
+        <a class="social-icon" href="#" data-cfg="SOCIAL_IG" target="_blank" rel="noopener" aria-label="Instagram de AECODE">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+        </a>
+        <a class="social-icon" href="#" data-cfg="SOCIAL_LI" target="_blank" rel="noopener" aria-label="LinkedIn de AECODE">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 8.5H3.56V20.4h3.38zm.24-3.66c0-1.08-.78-1.84-1.93-1.84s-1.94.76-1.94 1.84.75 1.84 1.92 1.84h.02c1.15 0 1.93-.76 1.93-1.84zM20.44 20.4v-6.8c0-3.64-1.94-5.33-4.53-5.33-2.09 0-3.02 1.15-3.54 1.95V8.5H9c.05 1 0 11.9 0 11.9h3.37v-6.65c0-.36.03-.71.13-.97.29-.71.94-1.45 2.05-1.45 1.45 0 2.03 1.1 2.03 2.72v6.35z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <footer>
+      <img class="footer-logo" src="assets/logos/aecode_logo_blanco.png" alt="AECODE"/>
+      <p>© 2026 AECODE — AI Construction Summit</p>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+(function(){
+  document.querySelectorAll('[data-cfg]').forEach(function(el){
+    var key = el.getAttribute('data-cfg');
+    if (window.CFG && CFG[key]) el.href = CFG[key];
+  });
+  var msg = encodeURIComponent((window.CFG && CFG.LINKS_CONSULTA_MSG) || 'Hola, quiero inscribirme al AI Construction Summit 2026');
+  var phone = (window.CFG && CFG.LINKS_CONSULTA_PHONE) || '51900121245';
+  document.getElementById('btnConsulta').href = 'https://wa.me/' + phone + '?text=' + msg;
+})();
+</script>
+
+</body>
+</html>
