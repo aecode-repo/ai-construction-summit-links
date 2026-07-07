@@ -134,6 +134,46 @@ body{
 .link-btn--wa .link-icon{background:rgba(255,255,255,.16)}
 .link-btn--wa .link-text small{color:rgba(255,255,255,.8)}
 
+.precongreso-hero{
+  width:100%;position:relative;overflow:hidden;
+  border-radius:1.25rem;padding:1.5rem 1.3rem;
+  background:linear-gradient(160deg,rgba(124,40,248,.22),rgba(35,107,249,.14) 60%,var(--dark2));
+  border:1px solid rgba(109,239,253,.3);
+  box-shadow:0 10px 34px rgba(35,107,249,.22);
+  text-decoration:none;color:#fff;display:block;
+  margin-top:1.8rem;
+  transition:transform .15s ease,border-color .15s ease;
+}
+.precongreso-hero:hover{transform:translateY(-2px);border-color:rgba(109,239,253,.5)}
+.pc-eyebrow{
+  display:inline-flex;align-items:center;gap:.4rem;
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:.68rem;font-weight:700;letter-spacing:.04em;
+  color:var(--cyan);background:rgba(109,239,253,.1);
+  border:1px solid rgba(109,239,253,.3);
+  padding:.28rem .7rem;border-radius:2rem;
+}
+.pc-title{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-weight:800;font-size:1.35rem;margin-top:.7rem;
+  letter-spacing:-.02em;
+}
+.pc-meta{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:.82rem;font-weight:500;color:var(--gray);
+  margin-top:.35rem;
+}
+.pc-flags{font-size:1.05rem;margin-top:.55rem;letter-spacing:.15em}
+.pc-cta{
+  display:flex;align-items:center;justify-content:center;gap:.5rem;
+  width:100%;margin-top:1.1rem;
+  background:var(--grad);border-radius:.8rem;
+  padding:.8rem 1rem;
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-weight:700;font-size:.9rem;color:#fff;
+  box-shadow:0 6px 20px rgba(35,107,249,.35);
+}
+
 .social-section{width:100%;margin-top:2.1rem;text-align:center}
 .social-label{
   display:block;font-family:'Plus Jakarta Sans',sans-serif;
@@ -177,12 +217,22 @@ footer p{
   <div class="card">
 
     <div class="avatar-wrap">
-      <img src="assets/images/logo_summit.svg" alt="AI Construction Summit 2026"/>
+      <img src="assets/images/logo-summit.avif" alt="AI Construction Summit 2026"/>
     </div>
 
     <h1 class="title">AI Construction Summit 2026</h1>
     <p class="subtitle">IA aplicada al sector AEC · Organiza AECODE</p>
     <span class="badge"><span class="badge-dot"></span>+1,300 inscritos y sumando</span>
+
+    <a class="precongreso-hero" href="#" data-cfg="LINKS_PRECONGRESO_URL" target="_blank" rel="noopener">
+      <span class="pc-eyebrow">🔥 PRE-CONGRESO GRATIS · 100% ONLINE</span>
+      <div class="pc-title">Únete al Pre-Congreso</div>
+      <div class="pc-meta">8 y 9 de julio · Ponentes de 6 países</div>
+      <div class="pc-flags">🇨🇴 🇺🇸 🇦🇺 🇵🇪 🇨🇱 🇦🇷</div>
+      <span class="pc-cta">Regístrate gratis
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+      </span>
+    </a>
 
     <div class="link-list">
 
@@ -226,17 +276,6 @@ footer p{
         <span class="link-text">
           Conoce la agenda
           <small>Días, horarios y speakers</small>
-        </span>
-        <span class="link-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></span>
-      </a>
-
-      <a class="link-btn" href="#" data-cfg="LINKS_PRECONGRESO_URL" target="_blank" rel="noopener">
-        <span class="link-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2c3 3 4 6 4 9 0 2-1 4-4 9-3-5-4-7-4-9 0-3 1-6 4-9z"/><circle cx="12" cy="11" r="1.6"/></svg>
-        </span>
-        <span class="link-text">
-          Únete al Pre-Congreso
-          <small>precongreso.vercel.app</small>
         </span>
         <span class="link-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></span>
       </a>
