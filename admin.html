@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Admin · Enlaces del Summit</title>
+<meta name="robots" content="noindex,nofollow"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'Manrope',sans-serif;background:#191C32;color:#fff;
+  min-height:100vh;line-height:1.5;padding:2rem 1rem 4rem;
+}
+:root{
+  --blue:#236BF9;--purple:#7C28F8;--cyan:#6DEFFD;--dark2:#222644;
+  --gray:#9193BB;--border:rgba(145,147,187,.18);--grad:linear-gradient(135deg,#236BF9,#7C28F8);
+  --danger:#F04747;
+}
+h1{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.3rem;font-weight:800}
+.wrap{max-width:640px;margin:0 auto}
+.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.7rem}
+a.view-link{color:var(--cyan);font-size:.8rem;text-decoration:none}
+
+.section{
+  background:var(--dark2);border:1px solid var(--border);border-radius:1rem;
+  padding:1.2rem;margin-bottom:1.2rem;
+}
+.section h2{
+  font-family:'Plus Jakarta Sans',sans-serif;font-size:.95rem;font-weight:700;
+  margin-bottom:.9rem;display:flex;align-items:center;justify-content:space-between;
+}
+label{
+  display:block;font-size:.72rem;font-weight:600;color:var(--gray);
+  margin:.6rem 0 .25rem;text-transform:uppercase;letter-spacing:.03em;
+}
+input[type=text], input[type=password], select{
+  width:100%;background:#191C32;border:1px solid var(--border);
+  color:#fff;border-radius:.5rem;padding:.6rem .7rem;font-size:.88rem;
+  font-family:'Manrope',sans-serif;
+}
+input:focus, select:focus{outline:2px solid var(--cyan);outline-offset:1px}
+
+.row{
+  border:1px solid var(--border);border-radius:.75rem;padding:.8rem .9rem 1rem;
+  margin-bottom:.8rem;background:rgba(255,255,255,.02);
+}
+.row-top{display:flex;align-items:center;justify-content:space-between;gap:.5rem}
+.row-title{font-size:.78rem;font-weight:700;color:var(--gray)}
+.row-actions{display:flex;gap:.35rem}
+.icon-btn{
+  background:rgba(255,255,255,.06);border:1px solid var(--border);color:#fff;
+  border-radius:.4rem;width:28px;height:28px;cursor:pointer;font-size:.85rem;
+  display:flex;align-items:center;justify-content:center;
+}
+.icon-btn:hover{background:rgba(255,255,255,.14)}
+.icon-btn.danger{color:var(--danger);border-color:rgba(240,71,71,.4)}
+
+.add-btn{
+  width:100%;margin-top:.3rem;padding:.65rem;border-radius:.6rem;
+  background:rgba(109,239,253,.08);border:1px dashed rgba(109,239,253,.4);
+  color:var(--cyan);font-weight:600;font-size:.82rem;cursor:pointer;
+}
+.add-btn:hover{background:rgba(109,239,253,.14)}
+
+.save-bar{
+  position:sticky;bottom:1rem;margin-top:1.5rem;
+  background:var(--dark2);border:1px solid var(--border);border-radius:1rem;
+  padding:1rem 1.1rem;box-shadow:0 10px 30px rgba(0,0,0,.4);
+}
+.save-bar input{margin-bottom:.7rem}
+button.save{
+  width:100%;padding:.85rem;border:none;border-radius:.7rem;
+  background:var(--grad);color:#fff;font-weight:700;font-size:.92rem;cursor:pointer;
+  font-family:'Plus Jakarta Sans',sans-serif;
+}
+button.save:disabled{opacity:.5;cursor:default}
+.status{margin-top:.6rem;font-size:.8rem;text-align:center}
+.status.ok{color:#4ADE80}
+.status.err{color:var(--danger)}
+.hint{font-size:.7rem;color:var(--gray);margin-top:.3rem}
+.loading{text-align:center;color:var(--gray);padding:3rem 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <h1>Editar enlaces del Summit</h1>
+    <a class="view-link" href="/" target="_blank" rel="noopener">Ver página en vivo →</a>
+  </div>
+
+  <div id="loading" class="loading">Cargando…</div>
+  <div id="form" style="display:none">
+
+    <div class="section">
+      <h2>Tarjeta destacada (Pre-Congreso)</h2>
+      <label>Etiqueta pequeña</label>
+      <input type="text" id="heroEyebrow"/>
+      <label>Título</label>
+      <input type="text" id="heroTitle"/>
+      <label>Fecha / detalle</label>
+      <input type="text" id="heroMeta"/>
+      <label>Banderas (emoji)</label>
+      <input type="text" id="heroFlags"/>
+      <label>Texto del botón</label>
+      <input type="text" id="heroCta"/>
+      <label>Link de destino</label>
+      <input type="text" id="heroUrl"/>
+    </div>
+
+    <div class="section">
+      <h2>Botones de enlaces <span class="hint" style="margin:0">(de arriba a abajo)</span></h2>
+      <div id="linksRows"></div>
+      <button type="button" class="add-btn" onclick="addLink()">+ Agregar botón</button>
+    </div>
+
+    <div class="section">
+      <h2>Redes del Summit</h2>
+      <div id="summitRows"></div>
+      <button type="button" class="add-btn" onclick="addSocial('summitRows')">+ Agregar red</button>
+    </div>
+
+    <div class="section">
+      <h2>Redes de AECODE</h2>
+      <div id="aecodeRows"></div>
+      <button type="button" class="add-btn" onclick="addSocial('aecodeRows')">+ Agregar red</button>
+    </div>
+
+    <div class="save-bar">
+      <label>Contraseña de administrador</label>
+      <input type="password" id="password" placeholder="Contraseña"/>
+      <button type="button" class="save" id="saveBtn" onclick="save()">Guardar cambios</button>
+      <div class="status" id="status"></div>
+      <div class="hint">Los cambios tardan ~1-2 min en verse reflejados en la página pública.</div>
+    </div>
+
+  </div>
+</div>
+
+<template id="linkRowTpl">
+  <div class="row" data-link-row>
+    <div class="row-top">
+      <span class="row-title">Botón</span>
+      <div class="row-actions">
+        <button type="button" class="icon-btn" onclick="moveRow(this,-1)">↑</button>
+        <button type="button" class="icon-btn" onclick="moveRow(this,1)">↓</button>
+        <button type="button" class="icon-btn danger" onclick="removeRow(this)">✕</button>
+      </div>
+    </div>
+    <label>Estilo</label>
+    <select data-field="style">
+      <option value="normal">Normal</option>
+      <option value="wa">WhatsApp (verde)</option>
+      <option value="primary">Destacado (gradiente)</option>
+    </select>
+    <label>Título</label>
+    <input type="text" data-field="title"/>
+    <label>Subtítulo</label>
+    <input type="text" data-field="subtitle"/>
+    <label>Link</label>
+    <input type="text" data-field="url"/>
+  </div>
+</template>
+
+<template id="socialRowTpl">
+  <div class="row" data-social-row>
+    <div class="row-top">
+      <span class="row-title">Red social</span>
+      <div class="row-actions">
+        <button type="button" class="icon-btn" onclick="moveRow(this,-1)">↑</button>
+        <button type="button" class="icon-btn" onclick="moveRow(this,1)">↓</button>
+        <button type="button" class="icon-btn danger" onclick="removeRow(this)">✕</button>
+      </div>
+    </div>
+    <label>Nombre (Instagram, Facebook, TikTok, LinkedIn...)</label>
+    <input type="text" data-field="label"/>
+    <label>Link</label>
+    <input type="text" data-field="url"/>
+  </div>
+</template>
+
+<script>
+function addLink(data){
+  var tpl = document.getElementById('linkRowTpl');
+  var node = tpl.content.cloneNode(true);
+  var row = node.querySelector('[data-link-row]');
+  if (data) {
+    row.querySelector('[data-field=style]').value = data.style || 'normal';
+    row.querySelector('[data-field=title]').value = data.title || '';
+    row.querySelector('[data-field=subtitle]').value = data.subtitle || '';
+    row.querySelector('[data-field=url]').value = data.url || '';
+  }
+  document.getElementById('linksRows').appendChild(node);
+}
+
+function addSocial(containerId, data){
+  var tpl = document.getElementById('socialRowTpl');
+  var node = tpl.content.cloneNode(true);
+  var row = node.querySelector('[data-social-row]');
+  if (data) {
+    row.querySelector('[data-field=label]').value = data.label || '';
+    row.querySelector('[data-field=url]').value = data.url || '';
+  }
+  document.getElementById(containerId).appendChild(node);
+}
+
+function moveRow(btn, dir){
+  var row = btn.closest('.row');
+  var parent = row.parentNode;
+  if (dir < 0 && row.previousElementSibling) {
+    parent.insertBefore(row, row.previousElementSibling);
+  } else if (dir > 0 && row.nextElementSibling) {
+    parent.insertBefore(row.nextElementSibling, row);
+  }
+}
+
+function removeRow(btn){
+  btn.closest('.row').remove();
+}
+
+function readLinkRows(){
+  return Array.prototype.map.call(document.querySelectorAll('#linksRows [data-link-row]'), function(row){
+    return {
+      style: row.querySelector('[data-field=style]').value,
+      title: row.querySelector('[data-field=title]').value,
+      subtitle: row.querySelector('[data-field=subtitle]').value,
+      url: row.querySelector('[data-field=url]').value
+    };
+  });
+}
+
+function readSocialRows(containerId){
+  return Array.prototype.map.call(document.querySelectorAll('#' + containerId + ' [data-social-row]'), function(row){
+    return {
+      label: row.querySelector('[data-field=label]').value,
+      url: row.querySelector('[data-field=url]').value
+    };
+  });
+}
+
+fetch('data/links.json', { cache: 'no-store' })
+  .then(function(r){ return r.json(); })
+  .then(function(data){
+    document.getElementById('heroEyebrow').value = data.hero.eyebrow || '';
+    document.getElementById('heroTitle').value = data.hero.title || '';
+    document.getElementById('heroMeta').value = data.hero.meta || '';
+    document.getElementById('heroFlags').value = data.hero.flags || '';
+    document.getElementById('heroCta').value = data.hero.ctaText || '';
+    document.getElementById('heroUrl').value = data.hero.url || '';
+    (data.links || []).forEach(function(l){ addLink(l); });
+    (data.socialsSummit || []).forEach(function(s){ addSocial('summitRows', s); });
+    (data.socialsAecode || []).forEach(function(s){ addSocial('aecodeRows', s); });
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('form').style.display = 'block';
+  })
+  .catch(function(){
+    document.getElementById('loading').textContent = 'No se pudo cargar la data actual.';
+  });
+
+function save(){
+  var status = document.getElementById('status');
+  var btn = document.getElementById('saveBtn');
+  var password = document.getElementById('password').value;
+  if (!password) {
+    status.textContent = 'Escribe la contraseña primero.';
+    status.className = 'status err';
+    return;
+  }
+  var payload = {
+    password: password,
+    data: {
+      hero: {
+        eyebrow: document.getElementById('heroEyebrow').value,
+        title: document.getElementById('heroTitle').value,
+        meta: document.getElementById('heroMeta').value,
+        flags: document.getElementById('heroFlags').value,
+        ctaText: document.getElementById('heroCta').value,
+        url: document.getElementById('heroUrl').value
+      },
+      links: readLinkRows(),
+      socialsSummit: readSocialRows('summitRows'),
+      socialsAecode: readSocialRows('aecodeRows')
+    }
+  };
+  btn.disabled = true;
+  status.textContent = 'Guardando…';
+  status.className = 'status';
+  fetch('/api/save', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  })
+    .then(function(r){ return r.json().then(function(j){ return { ok: r.ok, body: j }; }); })
+    .then(function(res){
+      btn.disabled = false;
+      if (res.ok) {
+        status.textContent = '✓ Guardado. Se verá reflejado en 1-2 minutos.';
+        status.className = 'status ok';
+      } else {
+        status.textContent = 'Error: ' + (res.body.error || 'no se pudo guardar');
+        status.className = 'status err';
+      }
+    })
+    .catch(function(){
+      btn.disabled = false;
+      status.textContent = 'Error de conexión, intenta de nuevo.';
+      status.className = 'status err';
+    });
+}
+</script>
+</body>
+</html>

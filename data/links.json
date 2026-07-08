@@ -1,0 +1,45 @@
+{
+  "hero": {
+    "eyebrow": "🔥 PRE-CONGRESO GRATIS · 100% ONLINE",
+    "title": "Únete al Pre-Congreso",
+    "meta": "8 y 9 de julio · Ponentes de 6 países",
+    "flags": "🇨🇴 🇺🇸 🇦🇺 🇵🇪 🇨🇱 🇦🇷",
+    "ctaText": "Regístrate gratis",
+    "url": "https://precongreso.vercel.app"
+  },
+  "links": [
+    {
+      "style": "wa",
+      "title": "Únete al grupo de WhatsApp",
+      "subtitle": "Novedades y avisos del Summit",
+      "url": "https://anggiej-svg.github.io/aecode-wsp/summit/"
+    },
+    {
+      "style": "primary",
+      "title": "Inscríbete ahora",
+      "subtitle": "Ya somos +1,300 · aecode.ai/summit",
+      "url": "https://aecode.ai/summit"
+    },
+    {
+      "style": "normal",
+      "title": "Consulta por tu inscripción",
+      "subtitle": "Escríbenos al WhatsApp",
+      "url": "https://wa.me/51900121245?text=Hola%2C%20quiero%20inscribirme%20al%20AI%20Construction%20Summit%202026%20%F0%9F%99%8C"
+    },
+    {
+      "style": "normal",
+      "title": "Conoce la agenda",
+      "subtitle": "Días, horarios y speakers",
+      "url": "https://aecode.ai/summit#agenda"
+    }
+  ],
+  "socialsSummit": [
+    { "label": "Instagram", "url": "https://www.instagram.com/ai.construction.summit/" },
+    { "label": "Facebook", "url": "https://www.facebook.com/share/1BU8LzzGFE/?mibextid=wwXIfr" },
+    { "label": "TikTok", "url": "https://www.tiktok.com/@ai.construction.summit" }
+  ],
+  "socialsAecode": [
+    { "label": "Instagram", "url": "https://www.instagram.com/aecode.ai/" },
+    { "label": "LinkedIn", "url": "https://www.linkedin.com/company/aecode-ai" }
+  ]
+}
